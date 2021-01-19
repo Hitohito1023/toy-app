@@ -1,0 +1,18 @@
+<h1><%= @user.name %>詳細画面</h1>
+
+<table>
+  <thead>
+    <td>name</td>
+    <td>email</td>
+    <td></td>
+  </thead>
+  <tbody>
+      <td><%= @user.name %></td>
+      <td><%= @user.email %></td>
+      <% if @user == current_user %>
+        <td><%= link_to "編集", edit_user_path(@user) %></td>
+      <% end %>
+  </tbody>
+</table>
+
+<%= link_to "戻る", users_path %>
