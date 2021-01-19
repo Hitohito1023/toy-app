@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <header>
+    <nav class="header-nav">
+      <ul class="header-item">
+        <li>ようこそ!! <%= current_user.name %>さん</li>
+          <i class="fas fa-list"></i><%#= link_to '投稿一覧▼', post_items_path %>
+        </li>
+        <li><i class="fas fa-users"></i><%= link_to 'ユーザー', users_path %></li>
+        <li><i class="fas fa-user"></i><%= link_to 'マイページ', user_path(current_user.id) %></li>
+        <li><i class="fas fa-sign-out-alt"></i><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  </header>
+  <% else %>
+  <header>
+      <nav class="header-nav">
+        <ul class="header-item">
+          <li class="dropdown">
+            <i class="fas fa-list"></i><%#= link_to '投稿一覧', post_items_path %>
+          </li>
+          <li><i class="fas fa-users"></i><%= link_to 'ユーザー', users_path %></li>
+          <li><i class="fas fa-user-plus"></i><%= link_to '新規登録', new_user_registration_path %></li>
+          <li><i class="fas fa-sign-in-alt"></i><%= link_to 'ログイン', new_user_session_path %></li>
+        </ul>
+      </nav>
+  </header>
+<% end %>

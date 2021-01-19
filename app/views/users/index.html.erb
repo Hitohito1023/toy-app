@@ -1,0 +1,15 @@
+<h1>User一覧画面</h1>
+<table>
+  <thead>
+    <td>name</td>
+    <td>email</td>
+    <td></td>
+  </thead>
+  <% @users.each do |user| %>
+  <tbody>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= link_to "詳細", user_path(user) %></td>
+  </tbody>
+  <% end %>
+</table>
