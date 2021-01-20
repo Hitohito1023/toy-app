@@ -16,3 +16,25 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+header {
+  background-color: #FFFFBB;
+}
+
+.navbar-title {
+  padding-left: 50px;
+}
+.navbar-content {
+  display: flex;
+  list-style: none;
+  margin-top: 30px;
+  padding-left: 800px;
+  .nav-item {
+    margin-right: 10px;
+  }
+}
+
+footer {
+  background-color: #FFFFBB;
+  height: 100px;
+}

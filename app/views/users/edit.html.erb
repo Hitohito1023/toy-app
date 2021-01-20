@@ -1,19 +1,21 @@
-<h1><%= @user.name %>編集画面</h1>
+<h1>User編集画面（<%= @user.name %>）</h1>
 
 <%= form_with model:@user, local: true do |f| %>
   <table class="table">
-    <thead>
+    <tr>
       <td><%= f.label :name %></td>
-      <td><%= f.label :email %></td>
-      <td></td>
-    </thead>
-    <tbody>
       <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :email %></td>
       <td><%= f.email_field :email %></td>
-      <td><%= f.submit "保存" %></td>
-    </tbody>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit "保存", class:"btn btn-info" %></td>
+      <td><%= link_to "削除", user_path(@user), method: :delete, data: { confirm: "You sure?" }, class:"btn btn-danger"  %></td>
+    </tr>
   </table>
 <% end %>
 
 <%= link_to "戻る", user_path(@user) %>
-<%= link_to "削除", user_path(@user), method: :delete, data: { confirm: "You sure?" } %>

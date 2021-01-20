@@ -1,6 +1,6 @@
-<h1>Book一覧</h1>
+<h1>Book一覧画面</h1>
 
-<h2><%= link_to "投稿画面へ", new_book_path %></h2>
+<h3 align="right"><%= link_to "投稿画面へ", new_book_path, class:"btn btn-success" %></h3>
 <table class="table">
   <thead>
     <td>Title</td>
@@ -13,7 +13,7 @@
     <td><%= book.title %></td>
     <td><%= book.body %></td>
     <td><%= book.price %></td>
-    <td><%= link_to "詳細", book_path(book) %></td>
+    <td><%= link_to "詳細", book_path(book), class:"btn btn-info" %></td>
   </tbody>
   <% end %>
 </table>

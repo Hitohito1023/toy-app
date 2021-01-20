@@ -1,15 +1,22 @@
 <h1>Book投稿画面</h1>
 
 <%= form_with model:@book, local:true do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-
-  <%= f.submit "投稿" %>
-
+  <table class="table">
+    <tr>
+      <td><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :body %></td>
+      <td><%= f.text_area :body %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :price %></td>
+      <td><%= f.number_field :price %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit "投稿" , class:"btn btn-info" %></td>
+    </tr>
+  </table>
 <% end %>
