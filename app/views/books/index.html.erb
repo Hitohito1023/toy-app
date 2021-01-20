@@ -1,0 +1,19 @@
+<h1>Book一覧</h1>
+
+<h2><%= link_to "投稿画面へ", new_book_path %></h2>
+<table>
+  <thead>
+    <td>Title</td>
+    <td>Body</td>
+    <td>price</td>
+    <td></td>
+  </thead>
+  <% @books.each do |book| %>
+  <tbody>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <td><%= book.price %></td>
+    <td><%= link_to "詳細", book_path(book) %></td>
+  </tbody>
+  <% end %>
+</table>

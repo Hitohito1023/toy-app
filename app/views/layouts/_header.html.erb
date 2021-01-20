@@ -3,7 +3,7 @@
     <nav class="header-nav">
       <ul class="header-item">
         <li>ようこそ!! <%= current_user.name %>さん</li>
-          <i class="fas fa-list"></i><%#= link_to '投稿一覧▼', post_items_path %>
+          <i class="fas fa-list"></i><%= link_to 'book一覧', books_path %>
         </li>
         <li><i class="fas fa-users"></i><%= link_to 'ユーザー', users_path %></li>
         <li><i class="fas fa-user"></i><%= link_to 'マイページ', user_path(current_user.id) %></li>
