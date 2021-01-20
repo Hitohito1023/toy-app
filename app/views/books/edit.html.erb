@@ -1,18 +1,20 @@
 <h1>Book編集画面</h1>
 
 <%= form_with model:@book, local:true do |f| %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-
-  <%= f.submit "更新" %>
-
+  <table class="table">
+    <thead>
+      <td><%= f.label :title %></td>
+      <td><%= f.label :body %></td>
+      <td><%= f.label :price %></td>
+      <td></td>
+    </thead>
+    <tbody>
+      <td><%= f.text_field :title %></td>
+      <td><%= f.text_area :body %></td>
+      <td><%= f.number_field :price %></td>
+      <td><%= f.submit "更新" %></td>
+    </tbody>
+  </table>
 <% end %>
 
 

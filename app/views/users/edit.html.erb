@@ -1,14 +1,18 @@
 <h1><%= @user.name %>編集画面</h1>
 
 <%= form_with model:@user, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.submit "保存" %>
-
+  <table class="table">
+    <thead>
+      <td><%= f.label :name %></td>
+      <td><%= f.label :email %></td>
+      <td></td>
+    </thead>
+    <tbody>
+      <td><%= f.text_field :name %></td>
+      <td><%= f.email_field :email %></td>
+      <td><%= f.submit "保存" %></td>
+    </tbody>
+  </table>
 <% end %>
 
 <%= link_to "戻る", user_path(@user) %>
