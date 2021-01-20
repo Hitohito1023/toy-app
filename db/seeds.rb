@@ -19,3 +19,12 @@
     password: "test000#{n + 1}"
   )
 end
+
+10.times do |n|
+  Book.create!(
+    title: "book#{n + 1}",
+    body: "#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}#{n + 1}",
+    price: "#{n + 1}000",
+    user_id: "#{n + 1}"
+  )
+end

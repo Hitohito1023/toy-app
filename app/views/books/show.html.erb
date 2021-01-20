@@ -1,0 +1,19 @@
+<h1><%= @book.title %></h1>
+
+<table>
+  <thead>
+    <td>Title</td>
+    <td>Body</td>
+    <td>price</td>
+    <td></td>
+  </thead>
+  <tbody>
+    <td><%= @book.title %></td>
+    <td><%= @book.body %></td>
+    <td><%= @book.price %></td>
+    <% if @book.user_id == current_user.id %>
+      <td><%= link_to "編集", edit_book_path(@book) %></td>
+    <% end %>
+  </tbody>
+</table>
+
