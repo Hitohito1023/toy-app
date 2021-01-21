@@ -1,7 +1,6 @@
-<% if user_signed_in? %>
+
 <footer>
-
-<p><%= link_to "お問い合わせ", contact_path %></p>
-
-</footer>
+<% if user_signed_in? %>
+  <p><%= link_to "お問い合わせ", contact_path %></p>
 <% end %>
+</footer>
