@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get   'contact'         => 'contact#new'     # 入力画面
   post  'contact/confirm' => 'contact#confirm'   # 確認画面
   post  'contact/thanks'  => 'contact#thanks'    # 送信完了画面
-
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
 end
 
