@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :books do
     resource :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
 
   get   'contact'         => 'contact#new'     # 入力画面
