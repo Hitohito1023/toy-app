@@ -5,4 +5,6 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :user_rooms
   has_many :chats
+
+  has_many :likes, dependent: :destroy
 end

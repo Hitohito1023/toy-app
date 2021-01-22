@@ -6,14 +6,18 @@
     <td>Body</td>
     <td>price</td>
     <td></td>
+    <td></td>
   </thead>
-  <tbody>
+  <tbody id="book_<%= @book.id %>">
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
     <td><%= @book.price %></td>
+    <td class="like-btn"><%= render "likes/like-btn", book: @book %></td>
     <% if @book.user_id == current_user.id %>
       <td><%= link_to "編集", edit_book_path(@book), class:"btn btn-info" %></td>
     <% end %>
   </tbody>
 </table>
+
+
 
