@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_092722) do
+ActiveRecord::Schema.define(version: 2021_01_25_062216) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 2021_01_24_092722) do
     t.index ["comment_id"], name: "index_notifications_on_comment_id"
     t.index ["visited_id"], name: "index_notifications_on_visited_id"
     t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
