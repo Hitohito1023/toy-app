@@ -4,11 +4,19 @@
   <thead>
     <td>name</td>
     <td>email</td>
+    <td>フォロー</td>
+    <td></td>
+    <td></td>
     <td></td>
   </thead>
-  <tbody>
+  <tbody id="user_<%= @user.id %>">
       <td><%= @user.name %></td>
       <td><%= @user.email %></td>
+      <td class="follow_form">
+        <%= render "relationships/follow_form", user: @user %>
+      </td>
+      <td>フォロー数: <%= @user.followings.count %></td>
+      <td>フォロワー数: <%= @user.followers.count %></td>
       <% if @user == current_user %>
         <td><%= link_to "編集", edit_user_path(@user), class:"btn btn-info" %></td>
       <% end %>
