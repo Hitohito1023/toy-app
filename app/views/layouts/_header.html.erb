@@ -4,6 +4,7 @@
       <h1 class="navbar-title navbar-left">Try app</h1>
       <ul class="navbar-content">
         <li class="nav-item">ようこそ!! <%= current_user.name %>さん</li>
+        <li class="nav-item"><%= link_to '通知', notifications_path %></li>
         <li class="nav-item"><%= link_to 'book一覧', books_path %></li>
         <li class="nav-item"><%= link_to 'ユーザー', users_path %></li>
         <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %></li>
