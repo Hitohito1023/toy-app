@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post  'contact/thanks'  => 'contact#thanks'    # 送信完了画面
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
+  resources :notifications, only: [:index]
 
 end
 

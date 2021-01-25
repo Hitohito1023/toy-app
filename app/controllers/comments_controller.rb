@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.book_id = @book.id
     if @comment.save
+      @book.create_notification_comment!(current_user, @comment.id)
       redirect_to request.referer
     else
       render "books/show"

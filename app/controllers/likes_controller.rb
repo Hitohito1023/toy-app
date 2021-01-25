@@ -4,6 +4,7 @@ class LikesController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
     like = @book.likes.new(user_id: current_user.id)
+    @book.create_notification_like!(current_user)
     like.save
   end
 
