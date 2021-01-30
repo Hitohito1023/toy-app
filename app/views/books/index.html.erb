@@ -13,22 +13,24 @@
     <td><%= book.title %></td>
     <td><%= book.body %></td>
     <td><%= book.price %></td>
+
     <div class="relative-post-evaluation">
       <span>評価：</span>
-      <span id="star-rate-<%= post.id %>"></span>
+      <span id="star-rate-<%= book.id %>"></span>
       <script>
-        $('#star-rate-<%= post.id %>').raty({
+        $('#star-rate-<%= book.id %>').raty({
           size: 36,
           starOff: "<%= asset_path('star-off.png') %>",
           starOn: "<%= asset_path('star-on.png') %>",
           starHalf: "<%= asset_path('star-half.png') %>",
-          half: true,   # 星半分表示
-          readOnly: true,   # 読み取り専用
-          score: <%= post.evaluation %>,   # 星評価の表示
+          half: true,
+          readOnly: true,
+          score: <%= book.evaluation %>,
         });
       </script>
-      <%= post.evaluation %>
+      <%= book.evaluation %>
     </div>
+
     <td><%= link_to "詳細", book_path(book), class:"btn btn-info" %></td>
   </tbody>
   <% end %>
