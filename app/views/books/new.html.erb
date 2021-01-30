@@ -15,20 +15,18 @@
       <td><%= f.number_field :price %></td>
     </tr>
 
-    <div class="field" id="star">
-      <%= f.label :evaluation, "星評価：" %>
-      <%= f.hidden_field :evaluation, id: :review_star %>
-      <script>
-        $('#star').raty({
-          size     : 36,
-          starOff:  '<%= asset_path('star-off.png') %>',
-          starOn : '<%= asset_path('star-on.png') %>',
-          starHalf: '<%= asset_path('star-half.png') %>',
-          scoreName: 'book[evaluation]',
-          half: true,
-        });
-      </script>
-    </div>
+    <p>評価 :<%= @book.evaluation %>点</p>
+    <div id="star-rate<%= @book.id%>"></div>    
+    <script>
+      $('#star-rate<%= @book.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        half      : false,
+        readOnly: true,
+        score: <%= @book.evaluation %>,
+      });
+    </script>
 
     <tr>
       <td></td>
